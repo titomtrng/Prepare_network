@@ -1788,6 +1788,218 @@
                 risks: ['Évaluation basée sur des hypothèses erronées', 'Absence de mise à jour régulière', 'Couverture incomplète des risques'],
                 example: 'Évaluation annuelle des risques de sécurité incluant les menaces internes et externes.',
                 interviewQ: ['Quelles sont les méthodes d\'évaluation des risques?', 'Comment quantifier les risques?', 'Quels sont les pièges à éviter?']
+            },
+            // 🧩 Réseau & infrastructure
+            'Routeur': {
+                short: 'Dispositif réseau qui achemine les paquets de données entre différents réseaux',
+                detail: 'Un routeur analyse les adresses IP de destination des paquets et détermine le meilleur chemin pour les acheminer vers leur destination finale. Il fonctionne au niveau de la couche 3 du modèle OSI et maintient des tables de routage pour prendre des décisions de forwarding.',
+                risks: ['Configuration incorrecte pouvant causer des boucles de routage', 'Absence de filtrage permettant le transit de trafic malveillant', 'Table de routage non sécurisée vulnérable aux attaques'],
+                example: 'Un routeur connectant le réseau local d\'une entreprise à Internet via un fournisseur d\'accès.',
+                interviewQ: ['Quelle est la différence entre un routeur et un switch?', 'Comment sécuriser la configuration d\'un routeur?', 'Quels protocoles de routage connaissez-vous?']
+            },
+            'Switch': {
+                short: 'Dispositif réseau qui connecte les appareils sur un réseau local et achemine le trafic basé sur les adresses MAC',
+                detail: 'Un switch opère au niveau de la couche 2 du modèle OSI et apprend automatiquement les adresses MAC des appareils connectés à ses ports. Il permet de créer des réseaux locaux performants en réduisant les collisions de données.',
+                risks: ['VLAN hopping via des attaques de double tagging', 'Switch spoofing permettant l\'accès à des VLAN non autorisés', 'Absence de port security permettant des connexions non autorisées'],
+                example: 'Un switch 48 ports dans un bureau connectant tous les ordinateurs et imprimantes du réseau.',
+                interviewQ: ['Quelle est la différence entre un switch managé et non managé?', 'Comment configurer la sécurité des ports sur un switch?', 'Qu\'est-ce que le spanning tree protocol?']
+            },
+            'Proxy': {
+                short: 'Serveur intermédiaire qui relaie les requêtes entre un client et un serveur',
+                detail: 'Un proxy agit comme intermédiaire pour les requêtes réseau, pouvant fournir des fonctions de cache, de filtrage de contenu, d\'anonymisation ou de journalisation. Il peut être utilisé pour contrôler l\'accès Internet ou optimiser les performances.',
+                risks: ['Journalisation des données sensibles des utilisateurs', 'Point unique de défaillance pour l\'accès Internet', 'Configuration incorrecte exposant le réseau interne'],
+                example: 'Un proxy d\'entreprise qui filtre l\'accès aux sites web non professionnels et cache les contenus fréquemment consultés.',
+                interviewQ: ['Quels sont les différents types de proxy?', 'Comment auditer la configuration d\'un proxy?', 'Quels sont les avantages et inconvénients d\'un proxy?']
+            },
+            'MPLS': {
+                short: 'MultiProtocol Label Switching - technologie de commutation de paquets basée sur des étiquettes',
+                detail: 'MPLS est une technique de transmission de données qui utilise des étiquettes pour prendre des décisions de forwarding, plutôt que les adresses IP traditionnelles. Cela permet une meilleure performance, qualité de service et gestion du trafic.',
+                risks: ['Coût élevé de mise en œuvre et maintenance', 'Complexité de configuration augmentant le risque d\'erreurs', 'Dépendance au fournisseur MPLS'],
+                example: 'Utilisation d\'MPLS par une entreprise pour interconnecter ses sites distants avec une qualité de service garantie.',
+                interviewQ: ['Quels sont les avantages d\'MPLS par rapport aux VPN?', 'Comment MPLS améliore-t-il la qualité de service?', 'Quels sont les coûts associés à MPLS?']
+            },
+            'WAN': {
+                short: 'Wide Area Network - réseau étendu couvrant une large zone géographique',
+                detail: 'Un WAN interconnecte des réseaux locaux sur de grandes distances, souvent à travers des pays ou continents. Les technologies WAN incluent MPLS, VPN, lignes dédiées et connexions Internet.',
+                risks: ['Dépendance aux opérateurs télécoms', 'Latence élevée affectant les applications sensibles', 'Coûts de bande passante importants'],
+                example: 'Le réseau d\'une multinationale connectant ses bureaux en Europe, Amérique et Asie.',
+                interviewQ: ['Quelles sont les technologies WAN courantes?', 'Comment optimiser les coûts WAN?', 'Quels sont les défis de sécurité des WAN?']
+            },
+            'MAN': {
+                short: 'Metropolitan Area Network - réseau métropolitain couvrant une ville ou une région',
+                detail: 'Un MAN est un réseau qui s\'étend sur une zone métropolitaine, plus grand qu\'un LAN mais plus petit qu\'un WAN. Il utilise souvent des technologies comme la fibre optique ou les connexions sans fil.',
+                risks: ['Vulnérabilité aux pannes affectant toute la zone', 'Complexité de gestion pour les grandes infrastructures', 'Coûts d\'infrastructure élevés'],
+                example: 'Le réseau d\'une municipalité connectant tous ses bâtiments administratifs à travers la ville.',
+                interviewQ: ['Quelle est la différence entre LAN, MAN et WAN?', 'Quelles technologies sont utilisées dans les MAN?', 'Quels sont les cas d\'usage typiques des MAN?']
+            },
+
+            // 🛡️ Sécurité & cyber
+            'DDoS': {
+                short: 'Distributed Denial of Service - attaque par déni de service distribué',
+                detail: 'Une attaque DDoS consiste à submerger un service ou une infrastructure avec un volume massif de trafic provenant de multiples sources, rendant le service indisponible pour les utilisateurs légitimes. Les attaquants utilisent souvent des botnets pour amplifier l\'attaque.',
+                risks: ['Indisponibilité des services critiques', 'Perte de revenus et réputation', 'Coûts élevés de mitigation'],
+                example: 'Un site e-commerce rendu inaccessible pendant le Black Friday par une attaque DDoS.',
+                interviewQ: ['Comment se protéger contre les attaques DDoS?', 'Quelle est la différence entre DoS et DDoS?', 'Comment détecter une attaque DDoS?']
+            },
+            'Phishing': {
+                short: 'Technique d\'hameçonnage visant à obtenir des informations sensibles par usurpation d\'identité',
+                detail: 'Le phishing utilise des emails, messages ou sites web frauduleux imitant des entités légitimes pour tromper les victimes et leur soutirer des identifiants, informations bancaires ou autres données sensibles. Les variantes incluent le spear phishing (ciblé) et le whaling (dirigé vers des cadres).',
+                risks: ['Vol d\'identifiants et accès non autorisés', 'Divulgation de données sensibles', 'Installation de malware via les pièces jointes'],
+                example: 'Un email semblant provenir de la DGFIP demandant de mettre à jour ses informations fiscales via un lien frauduleux.',
+                interviewQ: ['Comment détecter une tentative de phishing?', 'Quelles mesures de protection mettre en place?', 'Comment former les utilisateurs au phishing?']
+            },
+            'Ransomware': {
+                short: 'Logiciel malveillant qui chiffre les données et demande une rançon pour les restaurer',
+                detail: 'Le ransomware infecte un système, chiffre les fichiers importants et affiche une demande de rançon en échange de la clé de déchiffrement. Les attaques peuvent paralyser complètement une organisation et causer des pertes financières importantes.',
+                risks: ['Perte d\'accès aux données critiques', 'Interruption des activités métier', 'Pertes financières directes et indirectes'],
+                example: 'WannaCry - ransomware qui a infecté des centaines de milliers d\'ordinateurs dans le monde en 2017.',
+                interviewQ: ['Comment prévenir les infections par ransomware?', 'Que faire en cas d\'infection?', 'Faut-il payer la rançon?']
+            },
+            'Brute force': {
+                short: 'Attaque par force brute consistant à tester systématiquement tous les mots de passe possibles',
+                detail: 'Une attaque par force brute tente de deviner un mot de passe ou une clé en testant toutes les combinaisons possibles jusqu\'à trouver la bonne. Les attaquants utilisent des outils automatisés pour accélérer le processus.',
+                risks: ['Compromission de comptes utilisateurs', 'Accès non autorisé aux systèmes', 'Escalade de privilèges'],
+                example: 'Tentative de connexion à un service SSH avec des milliers de combinaisons login/mot de passe.',
+                interviewQ: ['Comment se protéger contre les attaques par force brute?', 'Quelles politiques de mot de passe recommander?', 'Comment détecter une attaque en cours?']
+            },
+            'Credential stuffing': {
+                short: 'Attaque utilisant des identifiants volés pour tenter de se connecter à d\'autres services',
+                detail: 'Le credential stuffing exploite la réutilisation des mots de passe par les utilisateurs. Les attaquants utilisent des listes d\'identifiants compromis sur un service pour tenter de se connecter à d\'autres services où les utilisateurs pourraient avoir réutilisé les mêmes identifiants.',
+                risks: ['Compromission de multiples comptes utilisateurs', 'Accès à des données sensibles sur différentes plateformes', 'Usurpation d\'identité'],
+                example: 'Utilisation de identifiants volés lors d\'une fuite de données LinkedIn pour tenter de se connecter à des comptes bancaires.',
+                interviewQ: ['Comment se protéger contre le credential stuffing?', 'Quelle est la différence avec le brute force?', 'Comment sensibiliser les utilisateurs?']
+            },
+            'Social engineering': {
+                short: 'Manipulation psychologique pour obtenir des informations confidentielles ou un accès',
+                detail: 'Le social engineering exploite la confiance et les faiblesses humaines plutôt que les vulnérabilités techniques. Les attaquants utilisent la persuasion, l\'intimidation ou la tromperie pour obtenir des informations sensibles ou convaincre une personne de réaliser une action compromettante.',
+                risks: ['Divulgation d\'informations sensibles', 'Contournement des contrôles de sécurité', 'Installation de malware par des actions utilisateur'],
+                example: 'Un attaquant se faisant passer pour le support technique pour obtenir le mot de passe d\'un employé.',
+                interviewQ: ['Quelles sont les techniques courantes de social engineering?', 'Comment former les employés?', 'Quels contrôles techniques peuvent aider?']
+            },
+            'Man-in-the-middle': {
+                short: 'Attaque où l\'attaquant intercepte et potentiellement modifie les communications entre deux parties',
+                detail: 'Dans une attaque Man-in-the-Middle (MITM), l\'attaquant s\'insère clandestinement entre deux parties communicantes, interceptant et pouvant altérer les messages échangés sans que les victimes ne s\'en rendent compte.',
+                risks: ['Interception de données sensibles', 'Modification des communications', 'Usurpation d\'identité'],
+                example: 'Interception de communications WiFi non sécurisées dans un café pour voler des identifiants de connexion.',
+                interviewQ: ['Comment se protéger contre les attaques MITM?', 'Quel rôle joue le chiffrement?', 'Comment détecter une attaque MITM?']
+            },
+            'Obsolescence matérielle': {
+                short: 'État d\'un équipement matériel devenu obsolète et non supporté par le fabricant',
+                detail: 'L\'obsolescence matérielle survient lorsque les équipements physiques (serveurs, routeurs, etc.) ne sont plus supportés par les fabricants, ne reçoivent plus de mises à jour de sécurité, ou ne peuvent plus exécuter les logiciels modernes de façon sécurisée.',
+                risks: ['Vulnérabilités non corrigées', 'Pannes matérielles non réparables', 'Non-conformité réglementaire'],
+                example: 'Serveurs vieux de 10 ans toujours en production sans contrat de maintenance ni mises à jour de sécurité.',
+                interviewQ: ['Comment gérer le cycle de vie du matériel?', 'Quels sont les risques spécifiques?', 'Comment planifier le renouvellement?']
+            },
+            'Supervision': {
+                short: 'Surveillance active et continue des systèmes et réseaux pour détecter les anomalies',
+                detail: 'La supervision implique la collecte et l\'analyse en temps réel des métriques de performance, de disponibilité et de sécurité des systèmes informatiques. Elle permet de détecter les problèmes avant qu\'ils n\'affectent les utilisateurs ou la sécurité.',
+                risks: ['Absence de détection des incidents', 'Temps de résolution prolongés', 'Non-respect des SLA'],
+                example: 'Tableau de bord de supervision affichant l\'état de santé de tous les serveurs et services critiques.',
+                interviewQ: ['Quels indicateurs superviser en priorité?', 'Comment choisir des outils de supervision?', 'Quelle est la différence avec le monitoring?']
+            },
+            'Audit trail': {
+                short: 'Piste d\'audit - enregistrement chronologique des activités et événements',
+                detail: 'Un audit trail est un enregistrement sécurisé et horodaté qui documente la séquence des activités ayant affecté une opération, une procédure ou un événement particulier. Il permet de retracer qui a fait quoi, quand, et parfois pourquoi.',
+                risks: ['Absence de traçabilité des actions critiques', 'Impossibilité d\'investiguer les incidents', 'Non-conformité réglementaire'],
+                example: 'Journaux détaillant toutes les connexions, modifications de données et actions administratives sur un système.',
+                interviewQ: ['Quels événements doivent être audités?', 'Comment sécuriser les audit trails?', 'Quelle durée de conservation recommander?']
+            },
+
+            // 🧱 Gouvernance & gestion IT
+            'PRA': {
+                short: 'Plan de Reprise d\'Activité - stratégie pour restaurer les systèmes après un sinistre',
+                detail: 'Le PRA se concentre sur la restauration de l\'infrastructure IT et des systèmes après un incident majeur. Il définit les procédures, délais et ressources nécessaires pour rétablir les services informatiques critiques.',
+                risks: ['Temps d\'indisponibilité prolongé', 'Perte de données irrécupérables', 'Non-respect des obligations contractuelles'],
+                example: 'Plan de basculement vers un datacenter de secours en cas d\'incendie dans le site principal.',
+                interviewQ: ['Quelle est la différence entre PRA et PCA?', 'Comment définir les priorités de recovery?', 'Comment tester un PRA?']
+            },
+            'PCA': {
+                short: 'Plan de Continuité d\'Activité - stratégie pour maintenir les activités métier pendant un sinistre',
+                detail: 'Le PCA est plus large que le PRA et couvre la continuité des activités métier dans leur ensemble, incluant les processus non-IT. Il identifie les activités critiques et définit les mesures pour les maintenir opérationnelles.',
+                risks: ['Interruption des activités métier essentielles', 'Perte de clients et de parts de marché', 'Impact réputationnel important'],
+                example: 'Plan permettant à une banque de continuer à servir ses clients même si son siège social est inaccessible.',
+                interviewQ: ['Comment identifier les processus métier critiques?', 'Quel est le lien entre PCA et PRA?', 'Qui doit être impliqué dans l\'élaboration du PCA?']
+            },
+            'Shadow IT': {
+                short: 'Utilisation de systèmes ou applications IT sans l\'approbation du département IT',
+                detail: 'Le Shadow IT désigne l\'utilisation par les employés d\'outils, applications ou services cloud non approuvés par le service IT officiel. Cela peut améliorer la productivité mais pose des risques significatifs de sécurité et de conformité.',
+                risks: ['Données stockées dans des environnements non sécurisés', 'Non-conformité réglementaire', 'Fragmentation des données et processus'],
+                example: 'Utilisation de Dropbox personnel par des employés pour partager des documents d\'entreprise.',
+                interviewQ: ['Comment détecter le Shadow IT?', 'Quelles stratégies pour le gérer?', 'Comment équilibrer sécurité et productivité?']
+            },
+
+            // 💼 Risques & conformité
+            'Disponibilité': {
+                short: 'Caractéristique d\'un système à être accessible et utilisable quand nécessaire',
+                detail: 'La disponibilité est l\'un des trois piliers de la sécurité de l\'information (avec la confidentialité et l\'intégrité). Elle mesure la capacité d\'un système à fonctionner correctement et à être accessible par les utilisateurs autorisés au moment où ils en ont besoin.',
+                risks: ['Interruption des services métier', 'Perte de productivité', 'Manque à gagner'],
+                example: 'Un site e-commerce avec un SLA de 99,99% de disponibilité, soit moins de 53 minutes d\'indisponibilité par an.',
+                interviewQ: ['Comment mesurer la disponibilité?', 'Quelles techniques pour l\'améliorer?', 'Quels sont les impacts d\'une indisponibilité?']
+            },
+            'Confidentialité': {
+                short: 'Garantie que l\'information n\'est accessible qu\'aux personnes autorisées',
+                detail: 'La confidentialité assure que les informations sensibles ne sont divulguées qu\'aux individus, entités ou processus autorisés. Elle est maintenue grâce à des mécanismes comme le chiffrement, le contrôle d\'accès et les politiques de sécurité.',
+                risks: ['Divulgation de données sensibles', 'Non-conformité réglementaire (RGPD)', 'Perte d\'avantage concurrentiel'],
+                example: 'Chiffrement des dossiers médicaux pour garantir que seuls les médecins traitants y aient accès.',
+                interviewQ: ['Quels mécanismes assurent la confidentialité?', 'Comment équilibrer confidentialité et partage?', 'Quelles sont les obligations légales?']
+            },
+            'Intégrité': {
+                short: 'Garantie que l\'information n\'est pas altérée de manière non autorisée',
+                detail: 'L\'intégrité assure que les données n\'ont pas été modifiées, supprimées ou créées de façon non autorisée. Elle est maintenue grâce à des mécanismes comme les checksums, les signatures numériques et les contrôles d\'accès stricts.',
+                risks: ['Modification malveillante des données', 'Corruption accidentelle', 'Prise de décision basée sur des données erronées'],
+                example: 'Utilisation de hachages cryptographiques pour vérifier qu\'un fichier n\'a pas été altéré pendant son transfert.',
+                interviewQ: ['Comment assurer l\'intégrité des données?', 'Quels sont les risques d\'une perte d\'intégrité?', 'Comment détecter les modifications non autorisées?']
+            },
+            'Traçabilité': {
+                short: 'Capacité à retracer l\'historique complet des actions et événements sur un système',
+                detail: 'La traçabilité permet de suivre le cycle de vie complet des données et des actions, depuis leur création jusqu\'à leur destruction. Elle est essentielle pour l\'audit, la conformité et l\'investigation d\'incidents.',
+                risks: ['Impossibilité d\'investiguer les incidents', 'Non-conformité aux exigences réglementaires', 'Absence de preuves en cas de litige'],
+                example: 'Journalisation détaillée de toutes les modifications apportées à une base de données clients.',
+                interviewQ: ['Quels événements doivent être tracés?', 'Comment garantir l\'intégrité des logs?', 'Quelle durée de conservation?']
+            },
+            'Conformité': {
+                short: 'Respect des lois, réglementations, standards et politiques applicables',
+                detail: 'La conformité en informatique consiste à s\'assurer que les systèmes, processus et pratiques respectent les exigences légales, réglementaires et contractuelles. Cela inclut des frameworks comme RGPD, ISO 27001, PCI-DSS, etc.',
+                risks: ['Sanctions légales et financières', 'Perte de certification', 'Atteinte à la réputation'],
+                example: 'Mise en œuvre des mesures techniques et organisationnelles requises par le RGPD pour un site web.',
+                interviewQ: ['Comment établir un programme de conformité?', 'Quels sont les frameworks courants?', 'Comment démontrer la conformité?']
+            },
+            'Obsolescence du SI': {
+                short: 'État d\'un système d\'information devenu obsolète et présentant des risques',
+                detail: 'L\'obsolescence du SI se produit lorsque l\'ensemble des technologies, applications et processus d\'une organisation ne sont plus adaptés aux besoins métier, aux standards de sécurité ou aux exigences réglementaires.',
+                risks: ['Vulnérabilités de sécurité non corrigeables', 'Incompatibilité avec les technologies modernes', 'Coûts de maintenance exponentiels'],
+                example: 'Parc applicatif reposant sur des technologies des années 2000, avec des compétences rares et coûteuses.',
+                interviewQ: ['Comment évaluer l\'obsolescence d\'un SI?', 'Quelle stratégie de modernisation?', 'Quels sont les signes avant-coureurs?']
+            },
+
+            // ☁️ Technologies & contextes
+            'Cloud': {
+                short: 'Prestation de services informatiques via Internet avec des ressources à la demande',
+                detail: 'Le cloud computing permet d\'accéder à des ressources informatiques (serveurs, stockage, applications) via Internet, avec un modèle de paiement à l\'usage. Les modèles de déploiement incluent public, privé et hybride.',
+                risks: ['Dépendance au fournisseur cloud', 'Conformité et souveraineté des données', 'Configuration incorrecte des services'],
+                example: 'Utilisation d\'AWS ou Azure pour héberger des applications sans gérer l\'infrastructure physique.',
+                interviewQ: ['Quels sont les avantages et risques du cloud?', 'Comment choisir entre cloud public et privé?', 'Quels contrôles de sécurité spécifiques?']
+            },
+            'SaaS': {
+                short: 'Software as a Service - logiciel fourni comme service via Internet',
+                detail: 'Le SaaS permet aux utilisateurs d\'accéder à des applications logicielles via un navigateur web, sans installation ni maintenance. Le fournisseur gère l\'infrastructure, la plateforme et l\'application.',
+                risks: ['Dépendance au fournisseur', 'Contrôle limité sur la sécurité', 'Conformité des données'],
+                example: 'Utilisation de Microsoft 365, Salesforce ou Google Workspace comme services SaaS.',
+                interviewQ: ['Quels sont les avantages du SaaS?', 'Comment évaluer la sécurité d\'un fournisseur SaaS?', 'Quels aspects contractuels vérifier?']
+            },
+            'PaaS': {
+                short: 'Platform as a Service - plateforme pour développer et déployer des applications',
+                detail: 'Le PaaS fournit une plateforme complète permettant aux développeurs de créer, déployer et gérer des applications sans se soucier de l\'infrastructure sous-jacente. Il inclut typically des outils de développement, bases de données et middleware.',
+                risks: ['Vendor lock-in technique', 'Limitations de personnalisation', 'Sécurité partagée mal comprise'],
+                example: 'Utilisation de Google App Engine ou Heroku pour développer et héberger des applications web.',
+                interviewQ: ['Quelle est la différence entre IaaS et PaaS?', 'Quels sont les cas d\'usage du PaaS?', 'Comment gérer la sécurité en PaaS?']
+            },
+            'IaaS': {
+                short: 'Infrastructure as a Service - infrastructure informatique virtualisée via Internet',
+                detail: 'L\'IaaS fournit des ressources informatiques fondamentales (serveurs virtuels, stockage, réseau) en tant que service. Le client garde le contrôle du système d\'exploitation, du middleware et des applications.',
+                risks: ['Responsabilité partagée mal comprise', 'Coûts imprévisibles en cas de mauvaise gestion', 'Configuration incorrecte des ressources'],
+                example: 'Utilisation d\'Amazon EC2 pour créer des serveurs virtuels ou S3 pour le stockage objet.',
+                interviewQ: ['Quel est le modèle de responsabilité partagée en IaaS?', 'Comment optimiser les coûts IaaS?', 'Quels sont les bonnes pratiques de sécurité?']
             }
         };
 
