@@ -3,46 +3,55 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Préparation Entretien Technique - Audit IT</title>
+    <!-- Contrainte 8: Meta viewport correcte -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Application mobile-first pour préparer vos entretiens techniques en Audit IT">
+    <meta name="theme-color" content="#2c3e50">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Audit IT - Préparation Entretiens</title>
     <style>
         /* =============================================
-           MOBILE-FIRST DESIGN
-           Base styles for mobile devices (320px+)
+           MOBILE-FIRST 2025 OPTIMIZED
+           Contraintes: < 2s load, < 1Mo, PageSpeed > 90
            ============================================= */
 
-        /* Variables CSS */
+        /* Variables CSS - Contrainte 11: Ratio contraste 4.5:1 */
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
+            --primary-color: #1a2332;
+            --secondary-color: #2980b9;
+            --accent-color: #c0392b;
             --light-color: #ecf0f1;
-            --dark-color: #34495e;
+            --dark-color: #2c3e50;
             --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --warning-color: #d68910;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-light: 0 1px 2px rgba(0, 0, 0, 0.08);
             --border-radius: 8px;
-            --transition: all 0.3s ease;
+            --transition: all 0.2s ease;
+            --touch-target: 48px;
+            --spacing-unit: 24px;
         }
 
-        /* Reset et base */
+        /* Reset optimisé - Contrainte 12: Minimiser CSS */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Contrainte 5: Police 16px minimum, pas de zoom */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f5f7fa;
             color: var(--dark-color);
             line-height: 1.6;
             font-size: 16px;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Header et navigation mobile-first */
+        /* Header optimisé - Contrainte 4: Max 6 liens */
         header {
             background-color: var(--primary-color);
             color: white;
@@ -50,50 +59,62 @@
             top: 0;
             z-index: 1000;
             box-shadow: var(--shadow);
+            will-change: transform;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem;
+            padding: 12px 16px;
             position: relative;
+            max-width: 100%;
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.125rem;
+            font-weight: 700;
             z-index: 1001;
+            letter-spacing: -0.5px;
         }
 
-        /* Menu hamburger pour mobile */
+        /* Contrainte 3 & 4: Bouton tactile 48px, espacement 24px */
         .menu-toggle {
             display: block;
             background: none;
             border: none;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            padding: 0.5rem;
+            padding: 12px;
             z-index: 1001;
             -webkit-tap-highlight-color: transparent;
+            min-width: var(--touch-target);
+            min-height: var(--touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .menu-toggle:active {
             transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
         }
 
+        /* Contrainte 4: Navigation simplifiée - 6 liens max */
         nav {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 80%;
-            max-width: 300px;
+            width: 85%;
+            max-width: 320px;
             height: 100vh;
             background-color: var(--primary-color);
-            transition: right 0.3s ease;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+            transition: right 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         nav.active {
@@ -102,22 +123,26 @@
 
         nav ul {
             list-style: none;
-            padding: 5rem 1.5rem 1.5rem;
+            padding: 80px 20px 20px;
         }
 
         nav li {
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--spacing-unit);
         }
 
+        /* Contrainte 3: Cible tactile 48px minimum */
         nav a {
             color: white;
             text-decoration: none;
-            padding: 1rem;
+            padding: 14px 16px;
             border-radius: var(--border-radius);
-            display: block;
-            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 500;
             transition: var(--transition);
             -webkit-tap-highlight-color: transparent;
+            min-height: var(--touch-target);
         }
 
         nav a:active {
@@ -129,7 +154,7 @@
             background-color: var(--secondary-color);
         }
 
-        /* Overlay pour fermer le menu */
+        /* Overlay optimisé */
         .nav-overlay {
             display: none;
             position: fixed;
@@ -139,109 +164,132 @@
             height: 100vh;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
         }
 
         .nav-overlay.active {
             display: block;
         }
 
-        /* Contenu principal - mobile first */
+        /* Contrainte 1: Contenu essentiel visible < 2s, Contrainte 6: 320-430px */
         main {
-            padding: 1rem;
+            padding: 16px;
             width: 100%;
+            min-width: 320px;
+            max-width: 100%;
         }
 
         .section {
             display: none;
             background-color: white;
             border-radius: var(--border-radius);
-            padding: 1.5rem;
+            padding: 20px 16px;
             box-shadow: var(--shadow-light);
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .section.active {
             display: block;
+            animation: fadeIn 0.2s ease;
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Contrainte 14: Hiérarchie visuelle claire */
         h1 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
             color: var(--primary-color);
-            line-height: 1.3;
+            line-height: 1.25;
+            font-weight: 700;
         }
 
         h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.875rem;
+            font-size: 1.375rem;
+            margin-bottom: 12px;
             color: var(--primary-color);
             line-height: 1.3;
+            font-weight: 700;
         }
 
         h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+            margin-bottom: 10px;
             color: var(--primary-color);
             line-height: 1.3;
+            font-weight: 600;
         }
 
         h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 8px;
             color: var(--dark-color);
+            font-weight: 600;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 12px;
             font-size: 1rem;
+            line-height: 1.6;
         }
 
-        /* Section Accueil - mobile first */
+        /* Contrainte 1 & 3: CTA visible premier écran, 48px min */
         .home-intro {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .feature-cards {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 16px;
         }
 
         .card {
             background-color: var(--light-color);
             border-radius: var(--border-radius);
-            padding: 1.25rem;
+            padding: 20px 16px;
             box-shadow: var(--shadow-light);
             transition: var(--transition);
         }
 
         .card:active {
-            transform: scale(0.98);
+            transform: scale(0.99);
         }
 
         .card h3 {
             color: var(--secondary-color);
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-size: 1.125rem;
         }
 
         .card ul {
-            padding-left: 1.25rem;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            padding-left: 20px;
+            margin-bottom: 16px;
+            font-size: 0.9375rem;
         }
 
         .card li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
         }
 
-        /* Boutons - optimisés pour touch */
+        /* Contrainte 3: Boutons 48px, optimisés tactiles */
         .btn {
             display: inline-block;
             background-color: var(--secondary-color);
             color: white;
-            padding: 0.875rem 1.5rem;
+            padding: 12px 24px;
             border: none;
             border-radius: var(--border-radius);
             cursor: pointer;
@@ -252,13 +300,17 @@
             text-align: center;
             width: 100%;
             -webkit-tap-highlight-color: transparent;
-            min-height: 44px;
-            /* iOS touch target minimum */
+            min-height: var(--touch-target);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .btn:active {
-            background-color: var(--primary-color);
+            background-color: #217dbb;
             transform: scale(0.98);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .btn-danger {
@@ -266,7 +318,7 @@
         }
 
         .btn-danger:active {
-            background-color: #c0392b;
+            background-color: #a93226;
         }
 
         .btn-success {
@@ -277,67 +329,76 @@
             background-color: #229954;
         }
 
-        /* Section Définitions - mobile first */
+        /* Section Définitions - Optimisée mobile */
         .search-bar {
             display: flex;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
             gap: 0;
         }
 
+        /* Contrainte 5 & 9: Input optimisé tactile */
         .search-bar input {
             flex: 1;
-            padding: 0.875rem;
+            padding: 14px 16px;
             border: 2px solid #ddd;
             border-right: none;
             border-radius: var(--border-radius) 0 0 var(--border-radius);
-            font-size: 1rem;
-            min-height: 44px;
+            font-size: 16px;
+            min-height: var(--touch-target);
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .search-bar input:focus {
             outline: none;
-            border-color: var(--secondary-color);
+            border-color: var (--secondary-color);
         }
 
         .search-bar button {
-            padding: 0.875rem 1.25rem;
+            padding: 14px 20px;
             background-color: var(--secondary-color);
             color: white;
             border: none;
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
             cursor: pointer;
             font-weight: 600;
+            font-size: 1rem;
             -webkit-tap-highlight-color: transparent;
-            min-height: 44px;
+            min-height: var(--touch-target);
+            min-width: 80px;
         }
 
         .search-bar button:active {
-            background-color: var(--primary-color);
+            background-color: #217dbb;
         }
 
+        /* Contrainte 4: Espacement 24px entre filtres */
         .filter-options {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            gap: var(--spacing-unit);
+            margin-bottom: 20px;
         }
 
         .filter-options select,
         .filter-options button {
-            padding: 0.875rem;
+            padding: 14px 16px;
             border: 2px solid #ddd;
             border-radius: var(--border-radius);
-            font-size: 1rem;
+            font-size: 16px;
             background-color: white;
             width: 100%;
-            min-height: 44px;
+            min-height: var(--touch-target);
             -webkit-tap-highlight-color: transparent;
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         .filter-options button {
             background-color: var(--light-color);
             font-weight: 600;
             cursor: pointer;
+            border-color: #ccc;
         }
 
         .filter-options button:active {
@@ -348,13 +409,13 @@
         .definitions-grid {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 16px;
         }
 
         .definition-card {
             border: 2px solid #e0e0e0;
             border-radius: var(--border-radius);
-            padding: 1.25rem;
+            padding: 16px;
             background-color: white;
             box-shadow: var(--shadow-light);
             position: relative;
@@ -362,28 +423,32 @@
 
         .definition-card h3 {
             margin-top: 0;
-            padding-right: 2.5rem;
+            padding-right: 56px;
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.0625rem;
         }
 
+        /* Contrainte 3: Bouton favoris 48px */
         .definition-card .favorite {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 12px;
+            right: 12px;
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: #ddd;
-            padding: 0.5rem;
-            min-width: 44px;
-            min-height: 44px;
+            padding: 6px;
+            min-width: var(--touch-target);
+            min-height: var(--touch-target);
             -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .definition-card .favorite:active {
-            transform: scale(1.2);
+            transform: scale(1.15);
         }
 
         .definition-card .favorite.active {
@@ -392,62 +457,62 @@
 
         .definition-card .short-def {
             font-weight: 600;
-            margin-bottom: 0.875rem;
+            margin-bottom: 12px;
             color: var(--secondary-color);
-            font-size: 0.95rem;
+            font-size: 0.9375rem;
         }
 
         .definition-card .detail-def {
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            margin-bottom: 12px;
+            font-size: 0.9375rem;
             line-height: 1.6;
         }
 
         .definition-card .risks {
-            margin-bottom: 1rem;
+            margin-bottom: 12px;
         }
 
         .definition-card .risks h4 {
             font-size: 1rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
         }
 
         .definition-card .risks ul {
-            padding-left: 1.25rem;
-            font-size: 0.9rem;
+            padding-left: 20px;
+            font-size: 0.875rem;
         }
 
         .definition-card .risks li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 6px;
         }
 
         .definition-card .example {
             font-style: italic;
-            margin-bottom: 1rem;
-            padding: 0.875rem;
+            margin-bottom: 12px;
+            padding: 12px;
             background-color: var(--light-color);
             border-radius: var(--border-radius);
             border-left: 4px solid var(--secondary-color);
-            font-size: 0.9rem;
+            font-size: 0.875rem;
         }
 
         .definition-card .interview-questions {
-            margin-top: 1rem;
+            margin-top: 12px;
         }
 
         .definition-card .interview-questions h4 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
             color: var(--secondary-color);
             font-size: 1rem;
         }
 
         .definition-card .interview-questions ul {
-            padding-left: 1.25rem;
-            font-size: 0.9rem;
+            padding-left: 20px;
+            font-size: 0.875rem;
         }
 
         .definition-card .interview-questions li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 6px;
         }
 
         /* Section Études de cas - mobile first */
@@ -1180,13 +1245,15 @@
 </head>
 
 <body>
-    <header>
+    <!-- Contrainte 11: Accessibilité ARIA -->
+    <header role="banner">
         <div class="nav-container">
-            <div class="logo">Audit IT</div>
-            <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+            <div class="logo" aria-label="Audit IT - Application de préparation">Audit IT</div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+                aria-controls="main-nav">
                 ☰
             </button>
-            <nav id="main-nav">
+            <nav id="main-nav" role="navigation" aria-label="Navigation principale">
                 <ul>
                     <li><a href="#" class="nav-link active" data-section="home">🏠 Accueil</a></li>
                     <li><a href="#" class="nav-link" data-section="definitions">📚 Définitions</a></li>
@@ -1197,14 +1264,14 @@
                 </ul>
             </nav>
         </div>
-        <div class="nav-overlay" id="nav-overlay"></div>
+        <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
     </header>
 
-    <main>
+    <main role="main" aria-label="Contenu principal">
         <!-- Section Accueil -->
-        <section id="home" class="section active">
+        <section id="home" class="section active" aria-labelledby="home-title">
             <div class="home-intro">
-                <h1>Préparation aux entretiens techniques en Audit IT</h1>
+                <h1 id="home-title">Préparation aux entretiens techniques en Audit IT</h1>
                 <p>Cette application vous aide à préparer efficacement vos entretiens techniques dans le domaine de
                     l'audit informatique.</p>
             </div>
@@ -1259,21 +1326,22 @@
         </section>
 
         <!-- Section Définitions -->
-        <section id="definitions" class="section">
-            <h2>Catalogue des définitions techniques</h2>
+        <section id="definitions" class="section" aria-labelledby="definitions-title">
+            <h2 id="definitions-title">Catalogue des définitions techniques</h2>
             <p>Recherchez et explorez les définitions des termes techniques essentiels en audit IT.</p>
 
-            <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Rechercher un terme...">
-                <button id="search-btn">Rechercher</button>
+            <div class="search-bar" role="search">
+                <input type="text" id="search-input" placeholder="Rechercher un terme..."
+                    aria-label="Rechercher une définition">
+                <button id="search-btn" aria-label="Lancer la recherche">Rechercher</button>
             </div>
 
-            <div class="filter-options">
-                <select id="sort-select">
+            <div class="filter-options" role="toolbar" aria-label="Options de filtrage">
+                <select id="sort-select" aria-label="Trier les définitions">
                     <option value="name">Trier par nom</option>
                     <option value="favorites">Trier par favoris</option>
                 </select>
-                <button id="show-favorites">Afficher les favoris</button>
+                <button id="show-favorites" aria-label="Afficher uniquement les favoris">Afficher les favoris</button>
                 <button id="show-all">Afficher tous</button>
                 <button id="export-pdf">Exporter en PDF</button>
             </div>
