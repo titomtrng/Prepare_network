@@ -884,6 +884,72 @@
             margin-top: 1.5rem;
         }
 
+        /* Section Réglementations - mobile optimized */
+        .regulations-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .regulation-category {
+            background-color: var(--light-color);
+            padding: 20px 16px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+        }
+
+        .regulation-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary-color);
+            font-size: 1.125rem;
+        }
+
+        .regulation-card {
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .regulation-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .regulation-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1.0625rem;
+            font-weight: 600;
+        }
+
+        .regulation-content div {
+            margin-bottom: 12px;
+        }
+
+        .regulation-content div:last-child {
+            margin-bottom: 0;
+        }
+
+        .regulation-content strong {
+            color: var(--dark-color);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .regulation-content .example {
+            background-color: #f8f9fa;
+            padding: 12px;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 4px;
+            font-style: italic;
+            font-size: 0.9375rem;
+        }
+
         /* =============================================
            MEDIA QUERIES - TABLET (min-width: 768px)
            ============================================= */
@@ -1259,8 +1325,8 @@
                     <li><a href="#" class="nav-link" data-section="definitions">📚 Définitions</a></li>
                     <li><a href="#" class="nav-link" data-section="cases">📝 Études de cas</a></li>
                     <li><a href="#" class="nav-link" data-section="network">🌐 Schéma réseau</a></li>
+                    <li><a href="#" class="nav-link" data-section="regulations">🏛️ Réglementations</a></li>
                     <li><a href="#" class="nav-link" data-section="improvise">⚡ Improvise</a></li>
-                    <li><a href="#" class="nav-link" data-section="about">ℹ️ À propos</a></li>
                 </ul>
             </nav>
         </div>
@@ -1279,11 +1345,12 @@
             <div class="feature-cards">
                 <div class="card">
                     <h3>Définitions techniques</h3>
-                    <p>Accédez à un catalogue complet de définitions techniques essentielles pour l'audit IT :</p>
+                    <p>Accédez à un catalogue complet de plus de 100 définitions essentielles :</p>
                     <ul>
                         <li>Recherche et filtrage des termes</li>
-                        <li>Fonction de favoris</li>
-                        <li>Export et impression</li>
+                        <li>Concepts IT, réseau et sécurité</li>
+                        <li>Termes bancaires (GPO, SEPA, PEP, TRACFIN)</li>
+                        <li>Fonction de favoris et export PDF</li>
                     </ul>
                     <a href="#" class="btn nav-link" data-section="definitions">Accéder aux définitions</a>
                 </div>
@@ -1298,6 +1365,18 @@
                         <li>Simulation de restitution</li>
                     </ul>
                     <a href="#" class="btn nav-link" data-section="cases">Générer une étude de cas</a>
+                </div>
+
+                <div class="card">
+                    <h3>Réglementations bancaires</h3>
+                    <p>Découvrez les normes et réglementations essentielles :</p>
+                    <ul>
+                        <li>Normes IT (ISO 27001, ITIL, COBIT)</li>
+                        <li>Réglementations bancaires (Bâle, DORA, RGPD)</li>
+                        <li>Processus métiers (KYC, LCB-FT)</li>
+                        <li>Points de contrôle pour auditeurs</li>
+                    </ul>
+                    <a href="#" class="btn nav-link" data-section="regulations">Découvrir les réglementations</a>
                 </div>
 
                 <div class="card">
@@ -1451,6 +1530,476 @@
                     <button class="btn" id="start-improvise">Démarrer</button>
                     <button class="btn" id="next-question" style="display: none;">Question suivante</button>
                     <button class="btn btn-danger" id="stop-improvise" style="display: none;">Arrêter</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Réglementations -->
+        <section id="regulations" class="section" aria-labelledby="regulations-title">
+            <h2 id="regulations-title">Audit – Normes – Réglementations bancaires</h2>
+            <p>Découvrez les cadres normatifs, les réglementations essentielles et les processus métiers bancaires que
+                tout auditeur IT doit connaître.</p>
+
+            <div class="regulations-container">
+                <!-- 🎯 Normes et cadres IT -->
+                <div class="regulation-category">
+                    <h3>🎯 Normes et cadres IT</h3>
+
+                    <div class="regulation-card">
+                        <h4>ISO 27001</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Norme internationale pour la mise en place d'un système de
+                                management de la sécurité de l'information (SMSI).
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Cadre structuré pour protéger les
+                                informations sensibles des clients, conforme aux exigences réglementaires.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Existence d'une politique de sécurité,
+                                analyse des risques formalisée, preuves de revues régulières, traitement des
+                                non-conformités.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier que la banque a documenté ses processus de gestion
+                                des incidents et réalise des exercices de recovery annuels.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>ITIL (Information Technology Infrastructure Library)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Framework de bonnes pratiques pour la gestion des services
+                                IT.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Assure la qualité des services IT
+                                supportant les activités critiques de la banque.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Processus de gestion des incidents,
+                                problèmes, changements et configuration ; respect des SLA ; catalogue de services.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Contrôler que tous les changements en production suivent un
+                                processus formalisé avec testing et validation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>COBIT (Control Objectives for Information and Related Technologies)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Framework de gouvernance et de management des technologies
+                                de l'information.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Aligne les objectifs IT avec les objectifs
+                                métier et assure un contrôle adéquat des risques.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Cartographie des processus, indicateurs de
+                                performance, mécanismes de contrôle, documentation des risques.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier que la banque a défini des indicateurs pour mesurer
+                                l'efficacité de ses contrôles de sécurité.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>NIST Cybersecurity Framework</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Cadre de référence américain pour améliorer la
+                                cybersécurité des infrastructures critiques.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Approche structurée pour identifier,
+                                protéger, détecter, répondre et recover face aux cybermenaces.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Évaluation du niveau de maturité cyber,
+                                plan d'action d'amélioration, gestion des identités, protection des données.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Examiner comment la banque catégorise ses données et systèmes
+                                selon leur criticité.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>SOC 2 (Service Organization Control 2)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Cadre d'audit pour évaluer les contrôles de sécurité,
+                                disponibilité, intégrité, confidentialité et vie privée.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Rassurer les clients et partenaires sur la
+                                qualité des contrôles IT, particulièrement pour les services cloud.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Contrôles opérationnels, tests
+                                d'efficacité, documentation des procédures, traçabilité.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier les contrôles d'accès logiques pour les
+                                administrateurs systèmes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎯 Sécurité et continuité -->
+                <div class="regulation-category">
+                    <h3>🎯 Sécurité et continuité</h3>
+
+                    <div class="regulation-card">
+                        <h4>PCA / PRA</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> PCA = Plan de Continuité d'Activité (métier) / PRA = Plan
+                                de Reprise d'Activité (informatique).
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Garantir la poursuite des opérations
+                                bancaires critiques même en cas d'incident majeur.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Documentation à jour, tests réguliers,
+                                adéquation avec les RTO/RPO, formation du personnel.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier que le PRA a été testé dans les 12 derniers mois et
+                                que les délais de basculement sont respectés.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>RTO / RPO</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> RTO = Délai maximal de reprise / RPO = Perte de données
+                                maximale acceptable.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Définir objectivement les exigences de
+                                reprise pour chaque service critique.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Adéquation entre les objectifs métier et
+                                les capacités techniques, revue annuelle des RTO/RPO.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Pour un système de trading, RTO de 15 minutes et RPO de 0
+                                (replication synchrone).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>Gestion des incidents de sécurité</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Processus pour détecter, analyser, contenir et résoudre
+                                les incidents de sécurité.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Minimiser l'impact des cyberattaques et
+                                prévenir leur récurrence.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Procédures documentées, équipe dédiée
+                                (CSIRT), outils de détection, revues post-incident.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Contrôler le processus de réponse à un incident de phishing
+                                ciblant les clients.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>Gestion des accès (IAM)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Processus et technologies pour gérer les identités
+                                numériques et leurs accès aux ressources.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Prévenir les accès non autorisés aux
+                                systèmes et données sensibles.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Révision régulière des habilitations,
+                                principe de moindre privilège, gestion du cycle de vie des accès.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier que les droits d'un employé muté sont mis à jour
+                                dans les 48h.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎯 Réglementations bancaires essentielles -->
+                <div class="regulation-category">
+                    <h3>🎯 Réglementations bancaires essentielles</h3>
+
+                    <div class="regulation-card">
+                        <h4>ACPR (Autorité de Contrôle Prudentiel et de Résolution)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Autorité française de supervision des banques et
+                                assurances.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Respect des exigences réglementaires sous
+                                peine de sanctions.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Conformité aux recommandations, réponse aux
+                                demandes de l'ACPR, mise en œuvre des mesures correctives.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier la mise en œuvre des recommandations de l'ACPR sur
+                                la sécurité des paiements.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>LCB-FT (Lutte Contre le Blanchiment et le Financement du Terrorisme)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Cadre réglementaire pour prévenir l'utilisation du système
+                                financier à des fins illicites.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Obligation légale sous peine de lourdes
+                                sanctions pénales et financières.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Processus KYC, détection des transactions
+                                suspectes, déclarations à TRACFIN, formation des équipes.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Contrôler l'efficacité des algorithmes de détection des
+                                transactions atypiques.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>Bâle II / III / IV</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Accords internationaux sur les exigences de fonds propres
+                                des banques.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Déterminer le niveau de capital nécessaire
+                                pour couvrir les risques.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Calcul des ratios de solvabilité, qualité
+                                des données, modélisation des risques, reporting réglementaire.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier l'intégrité des données utilisées pour le calcul du
+                                ratio CET1.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>DSP2 (Directive sur les Services de Paiement)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Directive européenne régissant les services de paiement et
+                                favorisant l'innovation.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Obligation d'ouvrir leurs APIs aux
+                                prestataires de services de paiement agréés (PSP).
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Sécurité des APIs (SCA), gestion des
+                                consentements, protection des données, processus d'onboarding des PSP.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Auditer la mise en œuvre de l'authentification forte (SCA)
+                                pour les paiements en ligne.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>RGPD (Règlement Général sur la Protection des Données)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Règlement européen sur la protection des données
+                                personnelles.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Gestion des données clients très sensibles
+                                avec des sanctions pouvant aller jusqu'à 4% du CA mondial.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Registre des traitements, respect des
+                                droits des personnes, sécurité des données, notification des violations.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier les processus de réponse aux demandes d'accès et de
+                                rectification des clients.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>DORA (Digital Operational Resilience Act)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Règlement européen sur la résilience opérationnelle
+                                numérique du secteur financier (applicable 2025).
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Renforce les exigences de cyber-résilience
+                                et la supervision des prestataires IT critiques.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Tests de résilience, gestion des risques
+                                ICT, reporting des incidents, supervision des tiers.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier les tests de résilience opérationnelle et les
+                                scénarios de crise cyber.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎯 Processus métiers bancaires -->
+                <div class="regulation-category">
+                    <h3>🎯 Processus métiers bancaires</h3>
+
+                    <div class="regulation-card">
+                        <h4>KYC (Know Your Customer)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Processus de vérification de l'identité et du profil de
+                                risque d'un client.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Première ligne de défense contre le
+                                blanchiment et le financement du terrorisme.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Exhaustivité des vérifications,
+                                actualisation des profils, cohérence des risk ratings.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Contrôler le processus d'onboarding d'un client politique
+                                (PEP).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>Octroi de crédit</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Processus d'analyse et de décision pour l'attribution de
+                                prêts.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Gestion du risque de crédit, principale
+                                source de revenus et de risques.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Séparation des fonctions, limites
+                                d'autorisation, scoring automatisé, documentation des décisions.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier l'intégrité des calculs de scoring pour les crédits
+                                immobiliers.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>Paiements (virements, cartes, prélèvements)</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Systèmes de traitement des opérations de paiement pour les
+                                clients.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Service essentiel soumis à des exigences
+                                de disponibilité et sécurité extrêmes.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Contrôles de sécurité, réconciliation,
+                                gestion des incidents, conformité SEPA.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Auditer les contrôles sur les virements exceptionnels
+                                (montants élevés, bénéficiaires inhabituels).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>Suivi des risques</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Processus d'identification, d'évaluation et de monitoring
+                                des risques bancaires.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Préservation de la solvabilité et de la
+                                réputation.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Exhaustivité de la cartographie des
+                                risques, qualité des données, action des comités, reporting.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Contrôler le processus de mesure du risque de marché sur les
+                                produits dérivés.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regulation-card">
+                        <h4>Reporting réglementaire</h4>
+                        <div class="regulation-content">
+                            <div class="definition">
+                                <strong>Définition :</strong> Production et transmission des informations requises par
+                                les autorités de supervision.
+                            </div>
+                            <div class="importance">
+                                <strong>Importance pour une banque :</strong> Obligation légale, transparence vis-à-vis
+                                des superviseurs.
+                            </div>
+                            <div class="audit-focus">
+                                <strong>Ce que l'auditeur regarde :</strong> Exhaustivité, exactitude, ponctualité,
+                                traçabilité des calculs, contrôle interne.
+                            </div>
+                            <div class="example">
+                                <strong>Exemple :</strong> Vérifier le processus de production du reporting COREP sur
+                                les fonds propres.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2000,6 +2549,78 @@
                 risks: ['Responsabilité partagée mal comprise', 'Coûts imprévisibles en cas de mauvaise gestion', 'Configuration incorrecte des ressources'],
                 example: 'Utilisation d\'Amazon EC2 pour créer des serveurs virtuels ou S3 pour le stockage objet.',
                 interviewQ: ['Quel est le modèle de responsabilité partagée en IaaS?', 'Comment optimiser les coûts IaaS?', 'Quels sont les bonnes pratiques de sécurité?']
+            },
+
+            // 🏦 Réglementations bancaires
+            'GPO': {
+                short: 'Group Policy Object - Stratégie de groupe dans Active Directory',
+                detail: 'Les GPO sont des configurations centralisées dans Active Directory qui permettent de définir et appliquer des politiques de sécurité, des paramètres logiciels et des configurations système sur l\'ensemble des ordinateurs et utilisateurs du domaine.',
+                risks: ['GPO mal configurées affaiblissant la sécurité', 'Conflits entre GPO causant des comportements imprévisibles', 'Absence de documentation des GPO appliquées'],
+                example: 'Une GPO peut forcer la complexité des mots de passe, bloquer l\'accès au registre ou déployer automatiquement des logiciels sur tous les postes.',
+                interviewQ: ['Comment auditer les GPO appliquées?', 'Quelle est la hiérarchie d\'application des GPO?', 'Comment gérer les conflits de GPO?']
+            },
+            'SEPA': {
+                short: 'Single Euro Payments Area - Espace unique de paiements en euros',
+                detail: 'SEPA est un système de paiement qui permet d\'effectuer des virements et prélèvements en euros dans toute l\'Europe selon les mêmes règles, droits et obligations. Il harmonise les paiements électroniques dans 36 pays européens.',
+                risks: ['Non-respect des formats et délais SEPA', 'Fraude sur les mandats de prélèvement', 'Erreurs de routage des paiements'],
+                example: 'Un virement SEPA permet à une entreprise française de payer un fournisseur italien en 1 jour ouvrable maximum.',
+                interviewQ: ['Quelles sont les exigences SEPA pour les banques?', 'Comment auditer la conformité SEPA?', 'Quels contrôles pour les mandats SEPA?']
+            },
+            'PEP': {
+                short: 'Politically Exposed Person - Personne politiquement exposée',
+                detail: 'Une PEP est une personne qui exerce ou a exercé des fonctions publiques importantes et qui présente donc un risque plus élevé de corruption ou de blanchiment d\'argent. Les banques doivent appliquer une vigilance renforcée pour ces clients.',
+                risks: ['Non-détection des PEP lors de l\'onboarding', 'Absence de revue régulière du statut PEP', 'Due diligence insuffisante sur les transactions'],
+                example: 'Un ministre, un ambassadeur ou un dirigeant d\'entreprise publique est considéré comme PEP et nécessite des contrôles renforcés.',
+                interviewQ: ['Comment identifier les PEP?', 'Quels contrôles supplémentaires pour les PEP?', 'Quelle est la durée de classification PEP?']
+            },
+            'TRACFIN': {
+                short: 'Traitement du renseignement et action contre les circuits financiers clandestins',
+                detail: 'TRACFIN est la cellule de renseignement financier française rattachée au ministère de l\'Économie. Les banques doivent déclarer à TRACFIN toute opération suspecte pouvant être liée au blanchiment ou au financement du terrorisme.',
+                risks: ['Non-déclaration d\'opérations suspectes (sanctions pénales)', 'Déclarations tardives ou incomplètes', 'Absence de procédures de détection'],
+                example: 'Une série de virements vers des pays à risque sans justification économique doit être déclarée à TRACFIN.',
+                interviewQ: ['Quels critères déclenchent une déclaration TRACFIN?', 'Comment auditer le processus de déclaration?', 'Quelles sont les obligations de délai?']
+            },
+            'CSIRT': {
+                short: 'Computer Security Incident Response Team - Équipe de réponse aux incidents de sécurité',
+                detail: 'Le CSIRT est une équipe dédiée à la prévention, détection, analyse et réponse aux incidents de sécurité informatique. Il coordonne la gestion des crises cyber et assure la remontée d\'information.',
+                risks: ['Absence de CSIRT formel dans l\'organisation', 'Processus de réponse aux incidents non testés', 'Manque de compétences techniques'],
+                example: 'Le CSIRT intervient lors d\'une attaque ransomware pour contenir la menace, analyser l\'origine et coordonner la recovery.',
+                interviewQ: ['Quelles sont les missions d\'un CSIRT?', 'Comment structurer un CSIRT?', 'Quels indicateurs de performance pour un CSIRT?']
+            },
+            'CET1': {
+                short: 'Common Equity Tier 1 - Capital de catégorie 1 en actions ordinaires',
+                detail: 'Le CET1 est la mesure la plus stricte du capital bancaire selon les accords de Bâle III. Il représente les fonds propres de base de la banque, principalement composés d\'actions ordinaires et de réserves, servant de coussin contre les pertes.',
+                risks: ['Ratio CET1 en dessous des exigences réglementaires', 'Erreurs de calcul du CET1', 'Actifs mal pondérés par le risque'],
+                example: 'Une banque doit maintenir un ratio CET1 d\'au moins 4,5% de ses actifs pondérés par le risque.',
+                interviewQ: ['Comment est calculé le ratio CET1?', 'Quelles sont les exigences minimales?', 'Quels contrôles pour le calcul du CET1?']
+            },
+            'COREP': {
+                short: 'Common Reporting - Cadre de reporting prudentiel européen',
+                detail: 'COREP est un framework standardisé de reporting réglementaire utilisé par les banques européennes pour transmettre leurs données prudentielles aux superviseurs. Il couvre les ratios de solvabilité, liquidité et grands risques.',
+                risks: ['Données COREP erronées ou incomplètes', 'Non-respect des délais de soumission', 'Systèmes de collecte non fiables'],
+                example: 'Une banque transmet mensuellement ses ratios de capital et de liquidité via COREP à l\'ACPR.',
+                interviewQ: ['Quels sont les principaux états COREP?', 'Comment auditer la qualité des données COREP?', 'Quels sont les délais de soumission?']
+            },
+            'API Security': {
+                short: 'Sécurité des interfaces de programmation applicatives',
+                detail: 'L\'API Security couvre l\'ensemble des pratiques et contrôles visant à protéger les API contre les accès non autorisés, les abus et les vulnérabilités. Cela inclut l\'authentification, l\'autorisation, le rate limiting, le chiffrement et la validation des données.',
+                risks: ['API exposées sans authentification appropriée', 'Absence de rate limiting permettant le DoS', 'Fuites de données sensibles dans les réponses API'],
+                example: 'Utilisation d\'OAuth 2.0 avec tokens JWT pour sécuriser une API REST bancaire exposant des données clients.',
+                interviewQ: ['Quels sont les 10 risques OWASP API Security?', 'Comment auditer la sécurité d\'une API?', 'Quels contrôles pour les API ouvertes (Open Banking)?']
+            },
+            'Three Lines of Defense': {
+                short: 'Modèle des trois lignes de défense en gestion des risques',
+                detail: 'Ce modèle définit trois niveaux de contrôle: 1ère ligne (opérationnels qui gèrent les risques au quotidien), 2ème ligne (fonctions de contrôle des risques et conformité), 3ème ligne (audit interne qui fournit une assurance indépendante).',
+                risks: ['Confusion des responsabilités entre les lignes', 'Deuxième ligne trop faible ou inexistante', 'Audit interne manquant d\'indépendance'],
+                example: 'Un trader (1ère ligne) exécute des opérations, le risk manager (2ème ligne) surveille les limites, l\'audit interne (3ème ligne) vérifie l\'efficacité des contrôles.',
+                interviewQ: ['Quels sont les rôles de chaque ligne de défense?', 'Comment auditer ce modèle?', 'Quels sont les risques de chevauchement?']
+            },
+            'DORA': {
+                short: 'Digital Operational Resilience Act - Règlement européen sur la résilience opérationnelle numérique',
+                detail: 'DORA est un règlement européen (2025) imposant aux institutions financières des exigences strictes en matière de résilience numérique: gestion des risques ICT, signalement d\'incidents, tests de résilience, gestion des tiers prestataires ICT.',
+                risks: ['Non-conformité DORA exposant à des sanctions', 'Tests de résilience insuffisants', 'Gestion inadéquate des prestataires ICT critiques'],
+                example: 'Une banque doit réaliser des tests de pénétration avancés (TLPT) et signaler les incidents ICT majeurs sous 4 heures.',
+                interviewQ: ['Quelles sont les 5 piliers de DORA?', 'Comment se préparer à DORA?', 'Quels impacts pour les prestataires cloud?']
             }
         };
 
